@@ -87,7 +87,7 @@
                     <a href="https://laracasts.com">Laracasts</a>
                     <a href="https://laravel-news.com">News</a>
                     <a href="https://forge.laravel.com">Forge</a>
-                    <a href="/login">Login</a>
+                    <a href="login">Login</a>
                 </div>
             </div>
         </div>

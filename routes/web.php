@@ -15,6 +15,10 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+Route::get('home', function() {
+    return redirect(route('admin'));
+});
+
 Auth::routes();
 
 Route::group(['prefix' => 'admin', 'middleware' => 'auth', 'namespace' => 'admin'], function() {
