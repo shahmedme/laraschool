@@ -83,28 +83,19 @@
 
 
                                         <div class="col-lg-3 col-xl-3 border-left">
-                                            <b>Latest activity</b>: Dec 06 2017, 22:23
-                                            <br />
-                                            <b>Register date: </b>: Nov 24 2017, 20:32
-                                            <br />
-                                            <b>Register IP: </b>: 123.456.789
-
-                                            <div class="m-b-10"></div>
-
-                                            <div id="avatar_image">
-                                                <img alt="image" style="max-width:100px; height:auto;" src="{{ asset('dashboard/images/avatars/admin.png') }}" />
+                                            <div id="avatar_image" class="mt-4 text-center">
+                                                <img alt="image" style="width:73px; height:auto;" src="{{ asset('dashboard/images/avatars/admin.png') }}" />
                                                 <br />
-                                                <i class="fa fa-trash-o fa-fw"></i> <a class="delete_image" href="#">Remove avatar</a>
-
+                                                <div class="d-none"><i class="fa fa-trash-o fa-fw"></i> <a class="delete_image" href="#">Remove avatar</a></div>
                                             </div>
                                             <div id="image_deleted_text"></div>
 
 
                                             <div class="m-b-10"></div>
 
-                                            <div class="form-group">
-                                                <label>Change avatar</label>
-                                                <input type="file" name="image" class="form-control">
+                                            <div class="custom-file mt-3">
+                                                <input type="file" class="custom-file-input" id="customFile">
+                                                <label class="custom-file-label" for="customFile">Choose file</label>
                                             </div>
 
                                         </div>
