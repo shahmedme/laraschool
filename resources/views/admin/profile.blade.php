@@ -74,7 +74,7 @@
 
                                             <div class="row">
                                                 <div class="col-lg-12">
-                                                    <button type="button" class="btn btn-primary">Edit profile</button>
+                                                    <button type="button" class="btn btn-primary">Save Changes</button>
                                                 </div>
                                             </div>
 
@@ -84,7 +84,7 @@
 
                                         <div class="col-lg-3 col-xl-3 border-left">
                                             <div id="avatar_image" class="mt-4 text-center">
-                                                <img alt="image" style="width:73px; height:auto;" src="{{ asset('dashboard/images/avatars/admin.png') }}" />
+                                                <img alt="image" style="width:73px; height:auto;" src="{{ asset('admin-view/images/avatars/admin.png') }}" />
                                                 <br />
                                                 <div class="d-none"><i class="fa fa-trash-o fa-fw"></i> <a class="delete_image" href="#">Remove avatar</a></div>
                                             </div>
