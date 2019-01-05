@@ -26,6 +26,7 @@ Route::group(['prefix' => 'admin', 'middleware' => 'auth', 'namespace' => 'admin
     Route::get('/', 'AdminController@dashboard')->name('admin');
     Route::get('dashboard', 'AdminController@dashboard')->name('dashboard');
     Route::get('profile', 'AdminController@profile')->name('profile');
+    Route::post('profile', 'AdminController@storeProfileDetails')->name('profile-store');
     Route::get('media-all', 'AdminController@mediaAll')->name('media-all');
     Route::get('upload', 'AdminController@upload')->name('upload');
     Route::get('notice-all', 'AdminController@noticeAll')->name('notice-all');

@@ -34,8 +34,8 @@
                             <div class="card-body">
 
 
-                                <form action="#" method="post" enctype="multipart/form-data">
-
+                                <form action="{{ route('profile-store') }}" method="POST" enctype="multipart/form-data">
+                                    {{ csrf_field() }}
                                     <div class="row">
 
                                         <div class="col-lg-9 col-xl-9">
@@ -44,14 +44,14 @@
                                                 <div class="col-lg-6">
                                                     <div class="form-group">
                                                         <label>Full name (required)</label>
-                                                        <input class="form-control" name="name" type="text" value="Administrator" required />
+                                                        <input class="form-control" name="full_name" type="text" value="{{ $user->full_name }}" required />
                                                     </div>
                                                 </div>
 
                                                 <div class="col-lg-6">
                                                     <div class="form-group">
                                                         <label>Valid Email (required)</label>
-                                                        <input class="form-control" name="email" type="email" value="office@website.com" required />
+                                                        <input class="form-control" name="email" type="email" value="{{ $user->email }}" required />
                                                     </div>
                                                 </div>
                                             </div>
@@ -67,14 +67,14 @@
                                                 <div class="col-lg-6">
                                                     <div class="form-group">
                                                         <label>Skype</label>
-                                                        <input class="form-control" name="skype" type="text" value="skypeid" />
+                                                        <input class="form-control" name="social" type="text" value="{{ $user->social }}" />
                                                     </div>
                                                 </div>
                                             </div>
 
                                             <div class="row">
                                                 <div class="col-lg-12">
-                                                    <button type="button" class="btn btn-primary">Save Changes</button>
+                                                    <button type="submit" class="btn btn-primary">Save Changes</button>
                                                 </div>
                                             </div>
 
@@ -84,7 +84,7 @@
 
                                         <div class="col-lg-3 col-xl-3 border-left">
                                             <div id="avatar_image" class="mt-4 text-center">
-                                                <img alt="image" style="width:73px; height:auto;" src="{{ asset('admin-view/images/avatars/admin.png') }}" />
+                                                <img alt="image" style="width:73px; height:auto;" src="{{ asset('img/'.$user->avatar) }}" />
                                                 <br />
                                                 <div class="d-none"><i class="fa fa-trash-o fa-fw"></i> <a class="delete_image" href="#">Remove avatar</a></div>
                                             </div>
@@ -94,7 +94,7 @@
                                             <div class="m-b-10"></div>
 
                                             <div class="custom-file mt-3">
-                                                <input type="file" class="custom-file-input" id="customFile">
+                                                <input type="file" class="custom-file-input" id="customFile" name="img">
                                                 <label class="custom-file-label" for="customFile">Choose file</label>
                                             </div>
 
