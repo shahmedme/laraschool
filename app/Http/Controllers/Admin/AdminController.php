@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Admin;
 
+use App\Option;
 use App\Teacher;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
@@ -140,6 +141,58 @@ class AdminController extends Controller
 
     public function institute()
     {
-        return view('admin.institute');
+        $options = Option::all();
+        $infos = array('hi', 'ok');
+
+        foreach ($options as $id=>$option)
+        {
+            $infos[$id] = $option->option_value;
+        }
+
+        return view('admin.institute', compact('infos'));
+    }
+
+    public function option(Request $request)
+    {
+        $phone = Option::find(2);
+        $phone->option_value = $request->phone;
+        $phone->save();
+
+        $email = Option::find(3);
+        $email->option_value = $request->email;
+        $email->save();
+
+        $address = Option::find(4);
+        $address->option_value = $request->address;
+        $address->save();
+
+        $img = $request->file('logo');
+
+        if(isset($img))
+        {
+            $logo = Option::find(5);
+            $name = 'logo' . uniqid() . $img->getClientOriginalName();
+            $logo->option_value = $name;
+            $logo->save();
+            $img->move('img', $name);
+        }
+
+        $facebook = Option::find(6);
+        $facebook->option_value = $request->facebook;
+        $facebook->save();
+
+        $instagram = Option::find(7);
+        $instagram->option_value = $request->instagram;
+        $instagram->save();
+
+        $twitter = Option::find(8);
+        $twitter->option_value = $request->twitter;
+        $twitter->save();
+
+        $youtube = Option::find(9);
+        $youtube->option_value = $request->youtube;
+        $youtube->save();
+
+        return redirect(route('institute'));
     }
 }

@@ -32,10 +32,11 @@ Route::group(['prefix' => 'admin', 'middleware' => 'auth', 'namespace' => 'admin
     Route::get('notice-all', 'AdminController@noticeAll')->name('notice-all');
     Route::get('notice-new', 'AdminController@noticeNew')->name('notice-new');
     Route::get('teachers', 'AdminController@teachers')->name('teachers');
-    Route::get('institute', 'AdminController@institute')->name('institute');
     Route::get('add-teacher', 'AdminController@addTeacher')->name('add-teacher');
     Route::post('add-teacher', 'AdminController@storeTeacher')->name('store-teacher');
     Route::get('edit-teacher/{id}', 'AdminController@editTeacher')->name('edit-teacher');
     Route::post('update-teacher/{id}', 'AdminController@updateTeacher')->name('update-teacher');
     Route::get('delete-teacher/{id}', 'AdminController@deleteTeacher')->name('delete-teacher');
+    Route::get('institute', 'AdminController@institute')->name('institute');
+    Route::post('institute', 'AdminController@option')->name('option');
 });
