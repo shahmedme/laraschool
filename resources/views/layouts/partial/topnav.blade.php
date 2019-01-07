@@ -3,7 +3,7 @@
 
     <!-- LOGO -->
     <div class="headerbar-left">
-        <a href="index.html" class="logo"><img alt="Logo" src="{{ asset('admin-view/images/logo.png') }}" /> <span>Admin</span></a>
+        <a href="{{ route('dashboard') }}" class="logo"><img alt="Logo" src="{{ asset('admin-view/images/logo.png') }}" class="img-fluid"><span class="text-capitalize">Green Street Intl. School</span></a>
     </div>
 
     <nav class="navbar-custom">

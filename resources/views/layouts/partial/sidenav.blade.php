@@ -21,11 +21,7 @@
                 </li>
 
                 <li class="submenu">
-                    <a href="#"><i class="fa fa-sticky-note"></i> <span> Notice </span> <span class="menu-arrow"></span></a>
-                    <ul class="list-unstyled">
-                        <li><a href="{{ route('notice-all') }}">All Notices</a></li>
-                        <li><a href="{{ route('notice-new') }}">Add New</a></li>
-                    </ul>
+                    <a href="{{ route('notice.all') }}"><i class="fa fa-sticky-note"></i> <span> Notices </span></a>
                 </li>
 
                 <li class="submenu">

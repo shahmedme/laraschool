@@ -26,83 +26,33 @@
 
                 <div class="col-12">
                     <div class="card mb-3">
-                        <div class="card-header">
-                            <h3>All Notices</h3>
+                        <div class="card-header d-flex justify-content-between align-items-center">
+                            <h3><i class="fa fa-sticky-note" aria-hidden="true"></i> All Notices</h3>
+                            <a href="{{ route('notice.new') }}" class="btn btn-secondary">New Notice</a>
                         </div>
 
                         <div class="card-body row">
-                            <div class="col-lg-4">
-                                <div class="card text-white bg-info mb-3">
-                                    <div class="card-header text-white">Header</div>
-                                    <div class="card-body">
-                                        <h4 class="card-title">Primary card title</h4>
-                                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                            @foreach($notices as $notice)
+                                <div class="col-lg-4">
+                                    <div class="card text-white bg-info mb-3">
+                                        <div class="card-header text-white d-flex justify-content-between align-items-center">
+                                            <p class="m-0">{{ $notice->topic}}</p>
+                                            <div class="btn-wrapper">
+                                                <a href="{{ route('notice.edit', $notice->id) }}" class="btn btn-sm btn-info">
+                                                    <i class="fa fa-pencil-square-o" aria-hidden="true"></i>
+                                                </a>
+                                                <a href="{{ route('notice.delete', $notice->id) }}" class="btn btn-sm btn-info">
+                                                    <i class="fa fa-trash" aria-hidden="true"></i>
+                                                </a>
+                                            </div>
+                                        </div>
+                                        <div class="card-body">
+                                            <h4 class="card-title">{{ str_limit($notice->title, $limit = 20, $end = '...') }}</h4>
+                                            <p class="card-text">{{ str_limit(strip_tags($notice->content), $limit = 150, $end = '...') }}</p>
+                                        </div>
                                     </div>
                                 </div>
-                            </div>
-                            <div class="col-lg-4">
-                                <div class="card text-white bg-info mb-3">
-                                    <div class="card-header text-white">Header</div>
-                                    <div class="card-body">
-                                        <h4 class="card-title">Secondary card title</h4>
-                                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-lg-4">
-                                <div class="card text-white bg-info mb-3">
-                                    <div class="card-header text-white">Header</div>
-                                    <div class="card-body">
-                                        <h4 class="card-title">Success card title</h4>
-                                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-lg-4">
-                                <div class="card text-white bg-info mb-3">
-                                    <div class="card-header text-white">Header</div>
-                                    <div class="card-body">
-                                        <h4 class="card-title">Danger card title</h4>
-                                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-lg-4">
-                                <div class="card text-white bg-info mb-3">
-                                    <div class="card-header text-white">Header</div>
-                                    <div class="card-body">
-                                        <h4 class="card-title">Warning card title</h4>
-                                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-lg-4">
-                                <div class="card text-white bg-info mb-3">
-                                    <div class="card-header text-white">Header</div>
-                                    <div class="card-body">
-                                        <h4 class="card-title">Info card title</h4>
-                                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-lg-4">
-                                <div class="card text-white bg-info mb-3">
-                                    <div class="card-header text-white">Header</div>
-                                    <div class="card-body">
-                                        <h4 class="card-title">Dark card title</h4>
-                                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-lg-4">
-                                <div class="card text-white bg-info mb-3">
-                                    <div class="card-header text-white">Header</div>
-                                    <div class="card-body">
-                                        <h4 class="card-title">Dark card title</h4>
-                                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                                    </div>
-                                </div>
-                            </div>
+                            @endforeach
                         </div>
                     </div><!-- end card-->
                 </div>

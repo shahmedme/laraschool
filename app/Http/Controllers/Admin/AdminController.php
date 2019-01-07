@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Admin;
 
+use App\Notice;
 use App\Option;
 use App\Teacher;
 use Illuminate\Http\Request;
@@ -57,12 +58,54 @@ class AdminController extends Controller
 
     public function noticeAll()
     {
-        return view('admin.notice-all');
+        $notices = Notice::all();
+
+        return view('admin.notice-all', compact('notices'));
     }
 
     public function noticeNew()
     {
         return view('admin.notice-new');
+    }
+
+    public function noticeAdd(Request $request)
+    {
+        $notice = New Notice;
+
+        $notice->title = $request->title;
+        $notice->content = $request->body;
+        $notice->topic = $request->topic;
+
+        $notice->save();
+
+        return redirect(route('notice.all'));
+    }
+
+    public function noticeEdit($id)
+    {
+        $notice = Notice::find($id);
+
+        return view('admin.notice-edit', compact('notice'));
+    }
+
+    public function noticeUpdate(Request $request, $id)
+    {
+        $notice = Notice::find($id);
+
+        $notice->title = $request->title;
+        $notice->content = $request->body;
+        $notice->topic = $request->topic;
+
+        $notice->save();
+
+        return redirect(route('notice.all'));
+    }
+
+    public function noticeDelete($id)
+    {
+        Notice::find($id)->delete();
+
+        return redirect(route('notice.all'));
     }
 
     public function teachers()

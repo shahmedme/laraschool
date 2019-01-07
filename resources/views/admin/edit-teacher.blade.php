@@ -65,6 +65,7 @@
                                             </select>
                                         </div>
                                     </div>
+                                    <a href="{{ route('teachers') }}" class="btn btn-primary">Cancel</a>
                                     <button type="submit" class="btn btn-primary">Save</button>
                                 </form>
 

@@ -23,7 +23,7 @@
                     <div class="col-12">
                         <div class="card mb-3">
                             <div class="card-header d-flex justify-content-between align-items-center">
-                                <h3><i class="fa fa-table"></i> Here's the list of all teachers</h3>
+                                <h3><i class="fa fa-user" aria-hidden="true"></i> Here's the list of all teachers</h3>
                                 <a href="{{ route('add-teacher') }}" class="btn btn-success">Add Teachers</a>
                             </div>
 
