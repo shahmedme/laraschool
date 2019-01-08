@@ -31,10 +31,10 @@
                             <a href="{{ route('notice.new') }}" class="btn btn-secondary">New Notice</a>
                         </div>
 
-                        <div class="card-body row">
+                        <div class="card-body pt-0 row">
                             @foreach($notices as $notice)
                                 <div class="col-lg-4">
-                                    <div class="card text-white bg-info mb-3">
+                                    <div class="card text-white bg-info mt-3">
                                         <div class="card-header text-white d-flex justify-content-between align-items-center">
                                             <p class="m-0">{{ $notice->topic}}</p>
                                             <div class="btn-wrapper">
@@ -53,6 +53,8 @@
                                     </div>
                                 </div>
                             @endforeach
+
+                            {{ $notices->links() }}
                         </div>
                     </div><!-- end card-->
                 </div>

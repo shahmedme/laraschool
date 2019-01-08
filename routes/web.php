@@ -29,8 +29,10 @@ Route::group(['prefix' => 'admin', 'middleware' => 'auth', 'namespace' => 'admin
     Route::get('profile', 'AdminController@profile')->name('profile');
     Route::post('profile', 'AdminController@storeProfileDetails')->name('profile-store');
 
-    Route::get('media-all', 'AdminController@mediaAll')->name('media-all');
-    Route::get('upload', 'AdminController@upload')->name('upload');
+    Route::get('images', 'AdminController@mediaImages')->name('media.img');
+    Route::get('videos', 'AdminController@mediaVideos')->name('media.videos');
+    Route::get('upload', 'AdminController@uploadView')->name('upload.view');
+    Route::post('upload', 'AdminController@upload')->name('upload');
 
     Route::get('notice-all', 'AdminController@noticeAll')->name('notice.all');
     Route::get('notice-new', 'AdminController@noticeNew')->name('notice.new');

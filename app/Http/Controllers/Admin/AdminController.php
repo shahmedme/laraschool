@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Admin;
 
+use App\Media;
 use App\Notice;
 use App\Option;
 use App\Teacher;
@@ -46,19 +47,53 @@ class AdminController extends Controller
         return redirect(route('profile'));
     }
 
-    public function mediaAll()
+    public function mediaImages()
     {
-        return view('admin.media-all');
+        $images = Media::select('name')
+                        ->whereIn('type', ['png', 'jpg', 'jpeg'])
+                        ->latest()
+                        ->paginate(49);
+
+        return view('admin.media-img', compact('images'));
     }
 
-    public function upload()
+    public function mediaVideos()
+    {
+        return view('admin.media-videos');
+    }
+
+    public function uploadView()
     {
         return view('admin.upload');
     }
 
+    public function upload(Request $request)
+    {
+        $files = $request->file('files');
+
+        if(isset($files))
+        {
+            foreach ($files as $file)
+            {
+                $name = uniqid() . $file->getClientOriginalName();
+                $file->move('img/gallery', $name);
+
+                $img = New Media;
+                $img->name = $name;
+                $img->type = $file->getClientOriginalExtension();
+
+                $img->save();
+            }
+        }
+
+        return redirect(route('media.img'));
+    }
+
     public function noticeAll()
     {
-        $notices = Notice::all();
+        $notices = Notice::select()
+                            ->latest()
+                            ->paginate(12);
 
         return view('admin.notice-all', compact('notices'));
     }
