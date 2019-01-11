@@ -15,8 +15,13 @@ class AdminController extends Controller
 {
     public function dashboard()
     {
-        return view('admin.dashboard');
-    }
+        $imgCount = Media::whereIn('type', ['png', 'jpg', 'jpeg'])->count();
+        $noticeCount = Notice::count();
+        $teacherCount = Teacher::count();
+        $userCount = User::count();
+
+        return view('admin.dashboard', compact(['imgCount', 'noticeCount', 'teacherCount', 'userCount']));
+}
 
     public function profile()
     {
