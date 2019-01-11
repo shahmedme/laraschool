@@ -1,95 +1,129 @@
-<!doctype html>
-<html lang="{{ app()->getLocale() }}">
-    <head>
-        <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
+@extends('layouts.master')
 
-        <title>Laravel</title>
-
-        <!-- Fonts -->
-        <link href="https://fonts.googleapis.com/css?family=Raleway:100,600" rel="stylesheet" type="text/css">
-
-        <!-- Styles -->
-        <style>
-            html, body {
-                background-color: #fff;
-                color: #636b6f;
-                font-family: 'Raleway', sans-serif;
-                font-weight: 100;
-                height: 100vh;
-                margin: 0;
-            }
-
-            .full-height {
-                height: 100vh;
-            }
-
-            .flex-center {
-                align-items: center;
-                display: flex;
-                justify-content: center;
-            }
-
-            .position-ref {
-                position: relative;
-            }
-
-            .top-right {
-                position: absolute;
-                right: 10px;
-                top: 18px;
-            }
-
-            .content {
-                text-align: center;
-            }
-
-            .title {
-                font-size: 84px;
-            }
-
-            .links > a {
-                color: #636b6f;
-                padding: 0 25px;
-                font-size: 12px;
-                font-weight: 600;
-                letter-spacing: .1rem;
-                text-decoration: none;
-                text-transform: uppercase;
-            }
-
-            .m-b-md {
-                margin-bottom: 30px;
-            }
-        </style>
-    </head>
-    <body>
-        <div class="flex-center position-ref full-height">
-            @if (Route::has('login'))
-                <div class="top-right links">
-                    @if (Auth::check())
-                        <a href="{{ url('/home') }}">Home</a>
-                    @else
-                        <a href="{{ url('/login') }}">Login</a>
-                        <a href="{{ url('/register') }}">Register</a>
-                    @endif
+@section('content')
+    <section class="sp-1 feature-area">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-8 mx-auto text-center">
+                    <h2 class="text-capitalize">What we offer</h2>
                 </div>
-            @endif
-
-            <div class="content">
-                <div class="title m-b-md">
-                    Laravel
+            </div>
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="mt-4 feature-area-item">
+                        <div class="img-wrapper">
+                            <img src="assets/img/feature1.png" alt="feature image" class="img-fluid">
+                        </div>
+                        <h4>Professional Teacher</h4>
+                    </div>
                 </div>
-
-                <div class="links">
-                    <a href="https://laravel.com/docs">Documentation</a>
-                    <a href="https://laracasts.com">Laracasts</a>
-                    <a href="https://laravel-news.com">News</a>
-                    <a href="https://forge.laravel.com">Forge</a>
-                    <a href="login">Login</a>
+                <div class="col-md-4">
+                    <div class="mt-4 feature-area-item">
+                        <div class="img-wrapper">
+                            <img src="assets/img/feature2.png" alt="feature image" class="img-fluid">
+                        </div>
+                        <h4>International Curriculam</h4>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="mt-4 feature-area-item">
+                        <div class="img-wrapper">
+                            <img src="assets/img/feature3.png" alt="feature image" class="img-fluid">
+                        </div>
+                        <h4>Extra Curricular Activities</h4>
+                    </div>
                 </div>
             </div>
         </div>
-    </body>
-</html>
+    </section>
+
+    <section class="sp-1 teacher-area">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-8 mx-auto text-center">
+                    <h2 class="text-capitalize">Meet Our Teachers</h2>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="mt-4 teacher-area-item">
+                        <div class="img-wrapper">
+                            <img src="assets/img/teacher1.jpg" alt="feature image" class="img-fluid">
+                        </div>
+                        <div class="teacher-info">
+                            <h4 class="name">Milon Rahman</h4>
+                            <p class="title">Assistant Teacher</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="mt-4 teacher-area-item">
+                        <div class="img-wrapper">
+                            <img src="assets/img/teacher2.jpg" alt="feature image" class="img-fluid">
+                        </div>
+                        <div class="teacher-info">
+                            <h4 class="name">Mosarof Hossain</h4>
+                            <p class="title">Principal</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="mt-4 teacher-area-item">
+                        <div class="img-wrapper">
+                            <img src="assets/img/teacher3.jpg" alt="feature image" class="img-fluid">
+                        </div>
+                        <div class="teacher-info">
+                            <h4 class="name">Setu Begum</h4>
+                            <p class="title">Assistant Teacher</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="sp-1 notice-area">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6 order-md-2">
+                    <div class="img-wrapper">
+                        <img src="assets/img/notice.jpg" alt="notice image" class="img-fluid">
+                    </div>
+                </div>
+                <div class="col-md-6 order-md-1">
+                    <div class="row mt-4 mt-md-0">
+                        <div class="col-10 mx-auto text-center">
+                            <h3 class="text-capitalize">Notice board</h3>
+                        </div>
+                    </div>
+                    <ul class="list-unstyled notice-area-content">
+                        <li class="notice-item">
+                            <div class="date">
+                                <p>03<br>Dec</p>
+                            </div>
+                            <div class="notice-body">
+                                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Perspiciatis accusantium eos dignissimos illo! Impedit, facilis <a href="#" class="more">see more</a href="#"></p>
+                            </div>
+                        </li>
+                        <li class="notice-item">
+                            <div class="date">
+                                <p>03<br>Dec</p>
+                            </div>
+                            <div class="notice-body">
+                                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Perspiciatis accusantium eos dignissimos illo! Impedit, facilis <a href="#" class="more">see more</a href="#"></p>
+                            </div>
+                        </li>
+                        <li class="notice-item">
+                            <div class="date">
+                                <p>03<br>Dec</p>
+                            </div>
+                            <div class="notice-body">
+                                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Perspiciatis accusantium eos dignissimos illo! Impedit, facilis <a href="#" class="more">see more</a href="#"></p>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+@endsection

@@ -1,0 +1,90 @@
+// FONT FAMILY
+$default-font: 'Poppins', sans-serif;
+
+// FONT SIZE
+$small: 14px;
+$regular: 16px;
+$large: 18px;
+
+// FONT WEIGHTS
+$regular: 400;
+$semi-bold: 600;
+$bold: 700;
+
+// TEMPLATE COLOR
+$primary-color: #aacc03;
+$secondary-color: #77cc77;
+
+// GENERIC COLOR
+$black: #000000;
+$white: #ffffff;
+$yellow: #ffff00;
+$red: #ff0000;
+$green: #008000;
+$blue: #0000ff;
+$navy: #000080;
+$smoky-black: #100c08;
+$anti-flash-white: #f2f3f4;
+$floral-white: #fffaf0;
+$ghost-white: #f8f8ff;
+$banana-yellow: #ffe135;
+$cadmium-yellow: #fff600;
+$brick-red: #cb4154;
+$cg-red: #e03c31;
+$cadmium-red: #e30022;
+$carmine-red: #ff0038;
+$ferrari-red: #ff2800;
+$android-green: #a4c639;
+$army-green: #4b5320;
+$cadmium-green: #006b3c;
+
+/* =====================================
+   	1. GLOBAL CLASSES.
+   ===================================== */
+.sp-1 {
+    padding-top: 45px;
+    padding-bottom: 50px;
+}
+
+.sp-2 {
+    padding-top: 50px;
+    padding-bottom: 50px;
+}
+
+.sp-3 {
+    padding-top: 47px;
+    padding-bottom: 41px;
+}
+
+.sp-top {
+    padding-top: 45px;
+}
+
+.sp-bottom {
+    padding-bottom: 45px;
+}
+
+@media screen and (min-width: 768px) {
+    .section-padding, .sp-1 {
+        padding-top: 90px;
+        padding-bottom: 100px;
+    }
+    
+    .section-padding-2, .sp-2 {
+        padding-top: 100px;
+        padding-bottom: 100px;
+    }
+    
+    .section-padding-3, .sp-3 {
+        padding-top: 95px;
+        padding-bottom: 82px;
+    }
+    
+    .sp-top {
+        padding-top: 90px;
+    }
+    
+    .sp-bottom {
+        padding-bottom: 90px;
+    }
+}

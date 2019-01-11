@@ -1,4 +1,4 @@
-@extends('../layouts/master')
+@extends('admin/layouts/master')
 
 @push('styles')
     <!-- BEGIN CSS for this page -->

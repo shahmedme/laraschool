@@ -1,4 +1,4 @@
-@extends('../layouts/master')
+@extends('admin/layouts/master')
 
 @push('styles')
     <link href="{{ asset('admin-view/plugins/lightbox/ekko-lightbox.css') }}" rel="stylesheet" />
