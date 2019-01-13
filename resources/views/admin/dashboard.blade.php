@@ -28,7 +28,7 @@
 							<i class="fa fa-picture-o float-right text-white"></i>
 							<h6 class="text-white text-uppercase m-b-20">Images</h6>
 							<h1 class="m-b-20 text-white counter">{{ $imgCount }}</h1>
-							<span class="text-white">15 New Orders</span>
+							<span class="text-white invisible">15 New Orders</span>
 						</div>
 					</div>
 
@@ -37,7 +37,7 @@
 							<i class="fa fa-file-text-o float-right text-white"></i>
 							<h6 class="text-white text-uppercase m-b-20">Notices</h6>
 							<h1 class="m-b-20 text-white counter">{{ $noticeCount }}</h1>
-							<span class="text-white">Bounce rate: 25%</span>
+							<span class="text-white invisible">Bounce rate: 25%</span>
 						</div>
 					</div>
 
@@ -46,7 +46,7 @@
 							<i class="fa fa-id-badge float-right text-white"></i>
 							<h6 class="text-white text-uppercase m-b-20">Teachers</h6>
 							<h1 class="m-b-20 text-white counter">{{ $teacherCount }}</h1>
-							<span class="text-white">25 New Users</span>
+							<span class="text-white invisible">25 New Users</span>
 						</div>
 					</div>
 
@@ -55,7 +55,7 @@
 							<i class="fa fa-user-o float-right text-white"></i>
 							<h6 class="text-white text-uppercase m-b-20">Admin</h6>
 							<h1 class="m-b-20 text-white counter">{{ $userCount }}</h1>
-							<span class="text-white">5 New Alerts</span>
+							<span class="text-white invisible">5 New Alerts</span>
 						</div>
 					</div>
 				</div>
