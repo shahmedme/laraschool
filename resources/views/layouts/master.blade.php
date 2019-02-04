@@ -13,11 +13,13 @@
     <link rel="stylesheet" href="{{ asset('assets/vendor/magnific-popup/magnific-popup.min.css') }}">
     <link href="https://fonts.googleapis.com/css?family=Poppins" rel="stylesheet">
     <link rel="stylesheet" href="{{ asset('assets/css/style-default.css') }}">
+
+    @stack('styles')
 </head>
 
-<body class="home">
+<body>
     @include('layouts.partials.header')
-    @yield('content');
+    @yield('content')
     @include('layouts.partials.footer')
 
     <script src="{{ asset('assets/vendor/jquery/jquery-3.3.1.min.js') }}"></script>

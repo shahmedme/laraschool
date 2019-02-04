@@ -11,13 +11,14 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
 
-Route::get('home', function() {
-    return redirect(route('admin'));
-});
+Route::get('/', 'PagesController@home')->name('home');
+Route::get('admission', 'PagesController@admission')->name('admission');
+Route::get('result', 'PagesController@result')->name('result');
+Route::get('teachers', 'PagesController@teachers')->name('teacher-list');
+Route::get('gallery', 'PagesController@gallery')->name('gallery');
+Route::get('contact', 'PagesController@contact')->name('contact');
+
 
 Auth::routes();
 
