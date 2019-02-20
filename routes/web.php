@@ -18,6 +18,8 @@ Route::get('result', 'PagesController@result')->name('result');
 Route::get('teachers', 'PagesController@teachers')->name('teacher-list');
 Route::get('gallery', 'PagesController@gallery')->name('gallery');
 Route::get('contact', 'PagesController@contact')->name('contact');
+Route::get('about', 'PagesController@about')->name('about');
+Route::get('post/{id}', 'PagesController@singlePost')->name('post.single');
 
 
 Auth::routes();

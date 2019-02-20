@@ -8,14 +8,13 @@
                             <img src="assets/img/apache.png" alt="logo" class="img-fluid">
                         </div>
                         <div class="address">
-                            <h5>Girls school road <br> Singair, Manikganj</h5>
-                            <h5>Phone: +8801643626200 <br> Email: mail@example.com</h5>
+                            <h5>{{ $infos[3] }}</h5>
+                            <h5>Phone: {{ $infos[1] }} <br> Email: {{ $infos[2] }}</h5>
                             <ul class="social list-unstyled">
-                                <li class="list-inline-item"><a href="#"><i class="fa fa-facebook"></i></a></li>
-                                <li class="list-inline-item"><a href="#"><i class="fa fa-twitter"></i></a></li>
-                                <li class="list-inline-item"><a href="#"><i class="fa fa-instagram"></i></a></li>
-                                <li class="list-inline-item"><a href="#"><i class="fa fa-google-plus"></i></a></li>
-                                <li class="list-inline-item"><a href="#"><i class="fa fa-youtube"></i></a></li>
+                                <li class="list-inline-item"><a href="{{ 'http://www.facebook.com/' . $infos[5] }}" target="_blank"><i class="fa fa-facebook"></i></a></li>
+                                <li class="list-inline-item"><a href="{{ 'http://www.twitter.com/' . $infos[5] }}" target="_blank"><i class="fa fa-twitter"></i></a></li>
+                                <li class="list-inline-item"><a href="{{ 'http://www.instagram.com/' . $infos[5] }}" target="_blank"><i class="fa fa-instagram"></i></a></li>
+                                <li class="list-inline-item"><a href="{{ 'http://www.youtube.com/' . $infos[5] }}" target="_blank"><i class="fa fa-youtube"></i></a></li>
                             </ul>
                         </div>
                     </div>

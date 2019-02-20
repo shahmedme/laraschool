@@ -48,7 +48,7 @@
                                             <label for="inlineFormCustomSelect">Select Notice Topic</label>
                                             <select class="custom-select mr-sm-2" id="inlineFormCustomSelect" name="topic">
                                                 <option selected>Choose...</option>
-                                                <option value="Culture">Culture</option>
+                                                <option value="admission">Admission</option>
                                                 <option value="Tech">Tech</option>
                                                 <option value="Startup">Startup</option>
                                             </select>

@@ -45,39 +45,19 @@
                 </div>
             </div>
             <div class="row">
-                <div class="col-md-4">
-                    <div class="mt-4 teacher-area-item">
-                        <div class="img-wrapper">
-                            <img src="assets/img/teacher1.jpg" alt="feature image" class="img-fluid">
-                        </div>
-                        <div class="teacher-info">
-                            <h4 class="name">Milon Rahman</h4>
-                            <p class="title">Assistant Teacher</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-4">
-                    <div class="mt-4 teacher-area-item">
-                        <div class="img-wrapper">
-                            <img src="assets/img/teacher2.jpg" alt="feature image" class="img-fluid">
-                        </div>
-                        <div class="teacher-info">
-                            <h4 class="name">Mosarof Hossain</h4>
-                            <p class="title">Principal</p>
+                @foreach($teachers as $teacher)
+                    <div class="col-md-4">
+                        <div class="mt-4 teacher-area-item">
+                            <div class="img-wrapper">
+                                <img src="{{ asset('img/' . $teacher->dp) }}" alt="feature image" class="img-fluid">
+                            </div>
+                            <div class="teacher-info">
+                                <h4 class="name">{{ $teacher->name }}</h4>
+                                <p class="title">{{ $teacher->role }}</p>
+                            </div>
                         </div>
                     </div>
-                </div>
-                <div class="col-md-4">
-                    <div class="mt-4 teacher-area-item">
-                        <div class="img-wrapper">
-                            <img src="assets/img/teacher3.jpg" alt="feature image" class="img-fluid">
-                        </div>
-                        <div class="teacher-info">
-                            <h4 class="name">Setu Begum</h4>
-                            <p class="title">Assistant Teacher</p>
-                        </div>
-                    </div>
-                </div>
+                @endforeach
             </div>
         </div>
     </section>
@@ -97,30 +77,19 @@
                         </div>
                     </div>
                     <ul class="list-unstyled notice-area-content">
-                        <li class="notice-item">
-                            <div class="date">
-                                <p>03<br>Dec</p>
-                            </div>
-                            <div class="notice-body">
-                                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Perspiciatis accusantium eos dignissimos illo! Impedit, facilis <a href="#" class="more">see more</a href="#"></p>
-                            </div>
-                        </li>
-                        <li class="notice-item">
-                            <div class="date">
-                                <p>03<br>Dec</p>
-                            </div>
-                            <div class="notice-body">
-                                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Perspiciatis accusantium eos dignissimos illo! Impedit, facilis <a href="#" class="more">see more</a href="#"></p>
-                            </div>
-                        </li>
-                        <li class="notice-item">
-                            <div class="date">
-                                <p>03<br>Dec</p>
-                            </div>
-                            <div class="notice-body">
-                                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Perspiciatis accusantium eos dignissimos illo! Impedit, facilis <a href="#" class="more">see more</a href="#"></p>
-                            </div>
-                        </li>
+                        @foreach($notices as $notice)
+                            <li class="notice-item">
+                                <div class="date">
+                                    <p>
+                                        {{ Carbon\Carbon::parse($notice->updated_at)->format('M,d Y') }}
+                                    </p>
+                                </div>
+                                <div class="notice-body">
+                                    <h5>{{ str_limit($notice->title, $limit = 40) }}</h5>
+                                    <p>{{ str_limit(strip_tags($notice->content), $limit = 120, $end = ' ') }}<a href="#" class="more">see more</a href="#"></p>
+                                </div>
+                            </li>
+                        @endforeach
                     </ul>
                 </div>
             </div>

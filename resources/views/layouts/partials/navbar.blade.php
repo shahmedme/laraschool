@@ -1,6 +1,6 @@
 <div class="navbar navbar-expand-lg navbar-dark bg-dark">
     <div class="container">
-        <a href="{{ route('home') }}" class="navbar-brand">Green Street</a>
+        <a href="{{ route('home') }}" class="navbar-brand">{{ $infos[0] }}</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#mainNav" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>

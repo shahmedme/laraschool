@@ -21,7 +21,7 @@ class AdminController extends Controller
         $userCount = User::count();
 
         return view('admin.dashboard', compact(['imgCount', 'noticeCount', 'teacherCount', 'userCount']));
-}
+    }
 
     public function profile()
     {
