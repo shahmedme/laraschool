@@ -384,3 +384,15 @@ a.btn-card {
 .details-card {
   padding: 50px 0px;
 }
+
+.img-wrapper-tlist {
+  width: 100%;
+  height: 200px;
+  overflow: hidden;
+}
+
+.admission-thumb-wrapper {
+  width: 100%;
+  height: 200px;
+  overflow: hidden;
+}

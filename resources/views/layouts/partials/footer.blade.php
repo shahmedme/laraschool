@@ -5,7 +5,7 @@
                 <div class="col-md-7">
                     <div class="info">
                         <div class="logo">
-                            <img src="assets/img/apache.png" alt="logo" class="img-fluid">
+                            <img src="{{ asset('assets/img/apache.png') }}" alt="logo" class="img-fluid">
                         </div>
                         <div class="address">
                             <h5>{{ $infos[3] }}</h5>
@@ -21,7 +21,7 @@
                 </div>
                 <div class="col-md-5">
                     <div class="img-wrapper">
-                        <img src="assets/img/footer-img.jpg" alt="#" class="img-fluid">
+                        <img src="{{ asset('assets/img/footer-img.jpg') }}" alt="#" class="img-fluid">
                     </div>
                 </div>
             </div>

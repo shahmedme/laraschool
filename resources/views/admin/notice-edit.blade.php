@@ -32,7 +32,7 @@
                                 <h3><i class="fa fa-file-o"></i> Add New Notice</h3>
                             </div>
                             <div class="card-body">
-                                <form action="{{ route('notice.update', $notice->id) }}" method="POST">
+                                <form action="{{ route('notice.update', $notice->id) }}" method="POST" enctype="multipart/form-data">
                                     {{ @csrf_field() }}
                                     <div class="row">
                                         <div class="col-md-9 form-group">
@@ -52,6 +52,10 @@
                                     <textarea rows="3" class="form-control editor" name="body">
                                         {{ $notice->content }}
                                     </textarea>
+                                    <div class="custom-file mb-3">
+                                        <input type="file" class="custom-file-input" id="customFile" name="thumb">
+                                        <label class="custom-file-label" for="customFile">Choose file</label>
+                                    </div>
                                     <a href="{{ route('notice.all') }}" class="btn btn-info">Cancel</a>
                                     <button class="btn btn-info">Save</button>
                                 </form>

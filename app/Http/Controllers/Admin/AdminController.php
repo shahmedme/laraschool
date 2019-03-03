@@ -10,6 +10,8 @@ use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\User;
 use Illuminate\Support\Facades\Hash;
+use App\Imports\StudentResult;
+use Maatwebsite\Excel\Facades\Excel;
 
 class AdminController extends Controller
 {
@@ -116,6 +118,15 @@ class AdminController extends Controller
         $notice->content = $request->body;
         $notice->topic = $request->topic;
 
+        $img = $request->file('thumb');
+
+        if(isset($img))
+        {
+            $slug = uniqid() . uniqid() . '.' . $img->getClientOriginalExtension();
+            $notice->thumbnail = $slug;
+            $img->move('img', $slug);
+        }
+
         $notice->save();
 
         return redirect(route('notice.all'));
@@ -136,6 +147,15 @@ class AdminController extends Controller
         $notice->content = $request->body;
         $notice->topic = $request->topic;
 
+        $img = $request->file('thumb');
+
+        if(isset($img))
+        {
+            $slug = uniqid() . uniqid() . '.' . $img->getClientOriginalExtension();
+            $notice->thumbnail = $slug;
+            $img->move('img', $slug);
+        }
+
         $notice->save();
 
         return redirect(route('notice.all'));
@@ -146,6 +166,18 @@ class AdminController extends Controller
         Notice::find($id)->delete();
 
         return redirect(route('notice.all'));
+    }
+
+    public function resultView()
+    {
+        return view('admin.result-upload');
+    }
+
+    public function resultUpload()
+    {
+        Excel::import(new StudentResult, request()->file('file'));
+
+        return back();
     }
 
     public function teachers()

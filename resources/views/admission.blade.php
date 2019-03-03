@@ -11,10 +11,12 @@
             <div class="container">
                 <div class="row">
                     @foreach($notices as $notice)
-                        <div class="col-md-4">
+                        <div class="col-md-4 mb-4">
                             <div class="card-content">
                                 <div class="card-img">
-                                    <img src="https://placeimg.com/380/230/nature" alt="">
+                                    <div class="admission-thumb-wrapper">
+                                        <img src="{{ asset('img/' . $notice->thumbnail) }}" alt="">
+                                    </div>
                                     <span>
                                     <h4>{{ $notice->topic }}</h4>
                                 </span>

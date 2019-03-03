@@ -29,6 +29,10 @@
                 </li>
 
                 <li class="submenu">
+                    <a href="{{ route('result.view') }}"><i class="fa fa-book"></i> <span> Result </span></a>
+                </li>
+
+                <li class="submenu">
                     <a href="{{ route('teachers') }}"><i class="fa fa-user"></i><span> Teachers </span> </a>
                 </li>
 

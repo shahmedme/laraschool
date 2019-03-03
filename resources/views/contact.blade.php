@@ -13,15 +13,15 @@
                         <div class="d-flex d-md-block flex-wrap justify-content-between address">
                             <div class="pr-3 call">
                                 <h6>Call Us</h6>
-                                <p>+880451452021</p>
+                                <p>{{ $infos[1] }}</p>
                             </div>
                             <div class="pr-3 email">
                                 <h6>Email</h6>
-                                <p>support@domain.com</p>
+                                <p>{{ $infos[2] }}</p>
                             </div>
                             <div class="pr-3 visit">
                                 <h6>Visit Us</h6>
-                                <p>Xyz addres, <br>street 3, block 7<br>1234 Denvar</p>
+                                <p>{{ $infos[3] }}</p>
                             </div>
                         </div>
                     </div>
