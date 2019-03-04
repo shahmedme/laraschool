@@ -154,7 +154,7 @@
                     </div>
 
                     <!-- item-->
-                    <a href="profile" class="dropdown-item notify-item">
+                    <a href="{{ route('profile') }}" class="dropdown-item notify-item">
                         <i class="fa fa-user"></i> <span>Profile</span>
                     </a>
 

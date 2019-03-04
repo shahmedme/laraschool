@@ -8,6 +8,7 @@ use App\Teacher;
 use App\Notice;
 use App\Result;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Mail;
 
 class PagesController extends Controller
 {
@@ -167,6 +168,30 @@ class PagesController extends Controller
         }
 
         return view('contact', compact('infos'));
+    }
+
+    public function sendContact(Request $request)
+    {
+        $mailTo = Option::select('option_value')->where('option_name', 'email')->get();
+        $options = Option::all();
+        $infos = array('hi', 'ok');
+
+        $data = array(
+            'name' => $request->name,
+            'phone' => $request->phone,
+            'email' => $request->email,
+            'subj' => $request->subj,
+            'msg' => $request->msg,
+            'mailTo' => 'mail@greenstreetintlschool.com'
+        );
+
+        Mail::send('mail', $data, function($message) use ($data) {
+            $message->from($data['email']);
+            $message->to($data['mailTo']);
+            $message->subject($data['subj']);
+        });
+
+        return redirect('contact');
     }
 
     public function about()

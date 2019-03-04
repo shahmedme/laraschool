@@ -19,6 +19,7 @@ Route::post('result', 'PagesController@resultView')->name('result.view.front');
 Route::get('teachers', 'PagesController@teachers')->name('teacher-list');
 Route::get('gallery', 'PagesController@gallery')->name('gallery');
 Route::get('contact', 'PagesController@contact')->name('contact');
+Route::post('contact', 'PagesController@sendContact')->name('send.contact');
 Route::get('about', 'PagesController@about')->name('about');
 Route::get('post/{id}', 'PagesController@singlePost')->name('post.single');
 
@@ -58,8 +59,3 @@ Route::group(['prefix' => 'admin', 'middleware' => 'auth', 'namespace' => 'Admin
     Route::get('institute', 'AdminController@institute')->name('institute');
     Route::post('institute', 'AdminController@option')->name('option');
 });
-
-
-Route::get('export', 'MyController@export')->name('export');
-Route::get('importExportView', 'MyController@importExportView');
-Route::post('import', 'MyController@import')->name('import');

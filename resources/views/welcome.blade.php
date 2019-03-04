@@ -85,8 +85,8 @@
                                     </p>
                                 </div>
                                 <div class="notice-body">
-                                    <h5>{{ str_limit($notice->title, $limit = 40) }}</h5>
-                                    <p>{{ str_limit(strip_tags($notice->content), $limit = 120, $end = ' ') }}<a href="#" class="more">see more</a href="#"></p>
+                                    <h5><a href="{{ route('post.single', $notice->id) }}">{{ str_limit($notice->title, $limit = 40) }}</a></h5>
+                                    <p>{{ str_limit(strip_tags($notice->content), $limit = 120, $end = ' ') }}<a href="{{ route('post.single', $notice->id) }}" class="more">see more</a></p>
                                 </div>
                             </li>
                         @endforeach

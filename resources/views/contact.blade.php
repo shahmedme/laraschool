@@ -26,25 +26,26 @@
                         </div>
                     </div>
                     <div class="col-md-8 order-md-1">
-                        <form action="#">
+                        <form action="{{ route('send.contact') }}" method="POST">
+                            @csrf
                             <div class="row">
                                 <div class="col-sm-6">
-                                    <input type="text" class="form-control mb-3" placeholder="Name">
+                                    <input type="text" class="form-control mb-3" placeholder="Name" name="name">
                                 </div>
                                 <div class="col-sm-6">
-                                    <input type="text" class="form-control mb-3" placeholder="Phone">
+                                    <input type="text" class="form-control mb-3" placeholder="Phone" name="phone">
                                 </div>
                                 <div class="col-sm-6">
-                                    <input type="email" class="form-control mb-3" placeholder="Email">
+                                    <input type="email" class="form-control mb-3" placeholder="Email" name="email">
                                 </div>
                                 <div class="col-sm-6">
-                                    <input type="text" class="form-control mb-3" placeholder="Department">
+                                    <input type="text" class="form-control mb-3" placeholder="Subject" name="subj">
                                 </div>
                                 <div class="col-12">
-                                    <textarea class="form-control mb-3" cols="30" rows="5"></textarea>
+                                    <textarea class="form-control mb-3" cols="30" rows="5" name="msg"></textarea>
                                 </div>
                                 <div class="col-12">
-                                    <div class="btn btn-success d-block">Send</div>
+                                    <button type="submit" class="btn btn-success w-100">Send</button>
                                 </div>
                             </div>
                         </form>

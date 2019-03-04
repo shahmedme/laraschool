@@ -60,7 +60,7 @@
                                                 <div class="col-lg-6">
                                                     <div class="form-group">
                                                         <label>Password (leave empty not to change)</label>
-                                                        <input class="form-control" name="password" type="password" value="" />
+                                                        <input class="form-control" name="password" type="password" />
                                                     </div>
                                                 </div>
 

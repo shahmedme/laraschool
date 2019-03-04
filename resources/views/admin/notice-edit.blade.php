@@ -42,7 +42,7 @@
                                         <div class="col-md-3">
                                             <label for="inlineFormCustomSelect">Select Notice Topic</label>
                                             <select class="custom-select mr-sm-2" id="inlineFormCustomSelect" name="topic">
-                                                <option selected value="Uncategorized">Choose...</option>
+                                                <option selected value="{{ $notice->topic }}">Choose...</option>
                                                 <option value="admission">Admission</option>
                                                 <option value="tech">Tech</option>
                                                 <option value="startup">Startup</option>
